@@ -3,6 +3,6 @@ node('master'){
         git credentialsId: 'b81ce157-f09e-4db0-8ee7-e2dd08667167', url: 'https://github.com/faazen/csharp.git'
     }
     stage('continuous build'){
-       bat "\${tool 'MSBuild'} Picture Puzzle.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}/"
+       bat "\${tool 'MSBuild'} Picture Puzzle/Picture Puzzle.csproj /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}/"
     }
 }
